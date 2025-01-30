@@ -11,6 +11,7 @@
       "to": "#3b82f6"
     }
   },
+  "openapi":"api-reference/openapi.json",
   "tabs": [
     {
       "name": "API Reference",
