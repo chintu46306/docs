@@ -1,0 +1,68 @@
+---
+title: 'Notification System'
+description: 'Understanding how notifications work in the system'
+---
+
+## Overview
+
+The notification system enables administrators to send messages to users. It supports both immediate and scheduled notifications, with different priority levels and delivery statuses.
+
+## Notification Types
+
+### Based on Priority
+- **Regular Notifications**: Standard system messages
+- **Critical Notifications**: High-priority messages that require immediate attention
+
+### Based on Timing
+- **Immediate**: Sent right away
+- **Scheduled**: Set for future delivery
+
+## Notification States
+
+Notifications can be in one of three states:
+- **Pending**: Created but not yet processed
+- **Queued**: Scheduled for future delivery
+- **Delivered**: Successfully sent to recipients
+
+## Notification Structure
+
+Each notification contains:
+- **Sender**: Admin who sent the notification
+- **Recipients**: List of users to receive the notification
+- **Message**: The notification content
+- **Critical Flag**: Indicates high priority
+- **Timestamp**: When the notification was created
+- **Status**: Current state of the notification
+- **Delivery Time**: When the notification was delivered
+- **Schedule Time**: When the notification is planned to be sent
+
+## Admin Features
+
+Administrators can:
+1. **Send Notifications**
+   - To individual users
+   - To multiple users at once
+   - With or without critical priority
+   - With immediate or scheduled delivery
+
+2. **Track Notifications**
+   - View all sent notifications
+   - Monitor delivery status
+   - See delivery timestamps
+
+## Best Practices
+
+1. **Message Content**
+   - Keep messages clear and concise
+   - Include relevant action items
+   - Specify importance through the critical flag
+
+2. **Scheduling**
+   - Use ISO 8601 datetime format
+   - Consider recipient time zones
+   - Allow sufficient lead time for scheduled notifications
+
+3. **Recipients**
+   - Verify recipient IDs before sending
+   - Group related recipients together
+   - Consider notification relevance to recipients

@@ -1,0 +1,62 @@
+---
+title: 'User Management'
+description: 'Understanding user roles and management in the system'
+---
+
+## Overview
+
+The user management system handles user accounts, authentication, and authorization. It supports different user roles and maintains user profiles with various attributes.
+
+## User Roles
+
+The system supports two main roles:
+- **User**: Regular users with standard permissions
+- **Admin**: Administrative users with additional privileges
+
+### Role Permissions
+
+#### Regular Users Can:
+- Manage their own profile
+- Update their availability
+- View their notifications
+
+#### Admins Can:
+- All regular user permissions
+- Send notifications to users
+- View all notifications in the system
+- Manage user accounts
+
+## User Profile
+
+Each user profile contains:
+
+### Required Information
+- **Name**: Full name of the user
+- **Email**: Unique email address (used for login)
+- **Password**: Securely hashed password
+
+### Optional Information
+- **Mobile Number**: Contact phone number
+- **Bio**: Brief user description
+- **Availability**: Weekly schedule
+- **Role**: User role (defaults to "user")
+
+## Authentication
+
+Users authenticate using:
+- Email and password combination
+- JWT (JSON Web Token) for session management
+
+## Security Considerations
+
+1. **Password Security**
+   - Passwords are hashed using bcrypt
+   - Minimum password requirements enforced
+
+2. **Access Control**
+   - Role-based access control (RBAC)
+   - JWT validation for protected endpoints
+
+3. **Data Privacy**
+   - Sensitive data is never exposed in responses
+   - Passwords are never returned in API responses

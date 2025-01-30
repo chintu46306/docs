@@ -1,0 +1,39 @@
+---
+title: 'Login'
+api: 'POST /api/auth/login'
+description: 'Authenticate a user and receive a JWT token'
+---
+
+### Body Parameters
+
+<ParamField body="email" type="string" required>
+  Email address of the user
+</ParamField>
+
+<ParamField body="password" type="string" required>
+  User's password
+</ParamField>
+
+### Response
+
+<ResponseField name="token" type="string">
+  JWT token for authentication
+</ResponseField>
+
+<RequestExample>
+```json
+{
+  "email": "john@example.com",
+  "password": "securepassword123"
+}
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "message": "Login successful"
+}
+```
+</ResponseExample>

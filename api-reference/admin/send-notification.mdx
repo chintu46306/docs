@@ -1,0 +1,76 @@
+---
+title: 'Send Notification'
+api: 'POST /api/admin/send-notification'
+description: 'Send notification to specified users (admin only)'
+authentication: 'Bearer Token'
+---
+
+### Headers
+
+<ParamField header="Authorization" type="string" required>
+  Bearer token for authentication
+</ParamField>
+
+### Body Parameters
+
+<ParamField body="recipients" type="array" required>
+  Array of user IDs to receive the notification
+</ParamField>
+
+<ParamField body="message" type="string" required>
+  Content of the notification
+</ParamField>
+
+<ParamField body="isCritical" type="boolean">
+  Whether the notification is critical
+  - Defaults to `false`
+</ParamField>
+
+<ParamField body="scheduledFor" type="string">
+  ISO 8601 datetime string for scheduled notifications
+</ParamField>
+
+### Response
+
+<ResponseField name="message" type="string">
+  Success message
+</ResponseField>
+
+<ResponseField name="notification" type="object">
+  Created notification object containing:
+  - `sender`: User ID of the sender (admin)
+  - `recipients`: Array of recipient User IDs
+  - `message`: Content of the notification
+  - `isCritical`: Boolean indicating if notification is critical
+  - `timestamp`: Date when notification was created
+  - `status`: One of `"pending"`, `"delivered"`, or `"queued"`
+  - `scheduledFor`: Date when notification is scheduled for (if set)
+</ResponseField>
+
+<RequestExample>
+```json
+{
+  "recipients": ["507f1f77bcf86cd799439012"],
+  "message": "Important system update",
+  "isCritical": true,
+  "scheduledFor": "2024-03-22T15:00:00Z"
+}
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "message": "Notification sent successfully",
+  "notification": {
+    "sender": "507f1f77bcf86cd799439011",
+    "recipients": ["507f1f77bcf86cd799439012"],
+    "message": "Important system update",
+    "isCritical": true,
+    "timestamp": "2024-03-21T10:00:00Z",
+    "status": "queued",
+    "scheduledFor": "2024-03-22T15:00:00Z"
+  }
+}
+```
+</ResponseExample>

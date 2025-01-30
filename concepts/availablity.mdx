@@ -1,0 +1,52 @@
+---
+title: 'Availability Management'
+description: 'Understanding how user availability works in the system'
+---
+
+## Overview
+
+The availability system allows users to define their schedule by specifying which time slots they are available on different days of the week. This is particularly useful for scheduling meetings, appointments, or managing work hours.
+
+## Availability Structure
+
+Each user's availability consists of:
+- Days of the week (Monday through Sunday)
+- Time slots for each day in 24-hour format
+
+### Time Slot Format
+
+Time slots are specified in the format `"HH:mm-HH:mm"`, for example:
+- `"09:00-17:00"` (9 AM to 5 PM)
+- `"13:30-18:30"` (1:30 PM to 6:30 PM)
+
+Users can specify multiple time slots per day to account for breaks or split schedules:
+```json
+{
+  "day": "Monday",
+  "timeSlots": [
+    "09:00-12:00",  // Morning slot
+    "13:00-17:00"   // Afternoon slot
+  ]
+}
+```
+
+## Managing Availability
+
+Users can:
+- Set their availability during registration
+- Update their availability through the profile update endpoint
+- View their current availability settings
+
+## Best Practices
+
+1. **Consistent Format**: Always use 24-hour time format (HH:mm)
+2. **Break Periods**: Use multiple time slots to indicate break periods
+3. **Weekly Pattern**: Set up a regular weekly pattern for better scheduling predictability
+
+## Validation
+
+The system validates:
+- Day names must be valid (Monday through Sunday)
+- Time slots must follow the HH:mm-HH:mm format
+- Start time must be before end time
+- Time slots cannot overlap

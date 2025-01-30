@@ -1,0 +1,35 @@
+---
+title: 'Get User Availability'
+api: 'GET /api/user/availability'
+description: 'Retrieve the current user availability schedule'
+authentication: 'Bearer Token'
+---
+
+### Headers
+
+<ParamField header="Authorization" type="string" required>
+  Bearer token for authentication
+</ParamField>
+
+### Response
+
+<ResponseField name="availability" type="array">
+  Array of availability objects containing:
+  - `day`: One of `"Monday"`, `"Tuesday"`, `"Wednesday"`, `"Thursday"`, `"Friday"`, `"Saturday"`, `"Sunday"`
+  - `timeSlots`: Array of strings in format `"HH:mm-HH:mm"` (e.g., `"09:00-17:00"`)
+</ResponseField>
+
+<ResponseExample>
+```json
+[
+  {
+    "day": "Monday",
+    "timeSlots": ["09:00-12:00", "13:00-17:00"]
+  },
+  {
+    "day": "Tuesday",
+    "timeSlots": ["10:00-18:00"]
+  }
+]
+```
+</ResponseExample>

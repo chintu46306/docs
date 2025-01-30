@@ -1,71 +1,93 @@
 ---
-title: Introduction
-description: "Welcome to the home of your new documentation"
+title: 'Introduction'
+description: 'Welcome to the User Management System Documentation'
 ---
 
-<img
-  className="block dark:hidden"
-  src="/images/hero-light.svg"
-  alt="Hero Light"
-/>
-<img
-  className="hidden dark:block"
-  src="/images/hero-dark.svg"
-  alt="Hero Dark"
-/>
+## Overview
 
-## Setting up
+The User Management System provides a robust API for managing user accounts, authentication, and notifications. This documentation will help you understand and integrate our system effectively.
 
-The first step to world-class documentation is setting up your editing environments.
+## Core Features
 
 <CardGroup cols={2}>
   <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
+    title="User Management"
+    icon="users"
+    href="/concepts/users"
   >
-    Get your docs set up locally for easy development
+    Complete user profile management with role-based access control
   </Card>
   <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
+    title="Authentication"
+    icon="key"
+    href="/api-reference/auth/login"
   >
-    Preview your changes before you push to make sure they're perfect
+    Secure JWT-based authentication system
+  </Card>
+  <Card
+    title="Availability Management"
+    icon="calendar"
+    href="/concepts/availablity"
+  >
+    Flexible scheduling system with customizable time slots
+  </Card>
+  <Card
+    title="Notification System"
+    icon="bell"
+    href="/concepts/notifications"
+  >
+    Advanced notification system with scheduling capabilities
   </Card>
 </CardGroup>
 
-## Make it yours
+## System Architecture
 
-Update your docs to your brand and add valuable content for the best user conversion.
+### User Roles
+
+The system supports two types of users:
+- **Regular Users**: Can manage their profiles and availability
+- **Administrators**: Have additional privileges for system management
+
+### Key Components
+
+1. **Authentication System**
+   - JWT-based authentication
+   - Secure password hashing
+   - Role-based access control
+
+2. **Profile Management**
+   - User profile customization
+   - Availability scheduling
+   - Contact information management
+
+3. **Notification System**
+   - Admin-to-user notifications
+   - Priority levels support
+   - Scheduled notifications
+
+## Getting Started
 
 <CardGroup cols={2}>
   <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
+    title="Core Concepts"
+    icon="book"
+    href="/concepts/users"
   >
-    Customize your docs to your company's colors and brands
+    Learn about the fundamental concepts and system architecture
   </Card>
   <Card
-    title="Reference APIs"
+    title="API Reference"
     icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
+    href="/api-reference/introduction"
   >
-    Automatically generate endpoints from an OpenAPI spec
-  </Card>
-  <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/content/components/accordions"
-  >
-    Build interactive features and designs to guide your users
-  </Card>
-  <Card
-    title="Get Inspiration"
-    icon="stars"
-    href="https://mintlify.com/customers"
-  >
-    Check out our showcase of our favorite documentation
+    Explore our comprehensive API documentation
   </Card>
 </CardGroup>
+
+## Security Features
+
+- Secure password hashing using bcrypt
+- JWT-based authentication
+- Role-based access control
+- Protected API endpoints
+- Data privacy measures

@@ -1,0 +1,51 @@
+---
+title: 'Update Profile'
+api: 'PUT /api/user/profile'
+description: 'Update the current user profile'
+authentication: 'Bearer Token'
+---
+
+### Headers
+
+<ParamField header="Authorization" type="string" required>
+  Bearer token for authentication
+</ParamField>
+
+### Body Parameters
+
+<ParamField body="name" type="string">
+  Updated name of the user
+</ParamField>
+
+<ParamField body="mobileNumber" type="string">
+  Updated mobile number
+</ParamField>
+
+<ParamField body="bio" type="string">
+  Updated user bio
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates if the update was successful
+</ResponseField>
+
+<RequestExample>
+```json
+{
+  "name": "John Smith",
+  "mobileNumber": "+1987654321",
+  "bio": "Senior software developer with 6 years of experience"
+}
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "success": true,
+  "message": "Profile updated successfully"
+}
+```
+</ResponseExample>

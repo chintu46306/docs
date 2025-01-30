@@ -1,0 +1,75 @@
+---
+title: 'Register User'
+api: 'POST /api/auth/register'
+description: 'Register a new user in the system'
+---
+
+### Body Parameters
+
+<ParamField body="name" type="string" required>
+  The full name of the user
+</ParamField>
+
+<ParamField body="email" type="string" required>
+  Email address of the user (must be unique)
+</ParamField>
+
+<ParamField body="password" type="string" required>
+  Password for the account
+</ParamField>
+
+<ParamField body="mobileNumber" type="string">
+  User's mobile phone number
+</ParamField>
+
+<ParamField body="role" type="enum">
+  User's role in the system
+  - Allowed values: `"user"` or `"admin"`
+  - Defaults to `"user"`
+</ParamField>
+
+<ParamField body="bio" type="string">
+  Brief description about the user
+</ParamField>
+
+<ParamField body="availability" type="array">
+  Array of availability objects containing:
+  - `day`: One of `"Monday"`, `"Tuesday"`, `"Wednesday"`, `"Thursday"`, `"Friday"`, `"Saturday"`, `"Sunday"`
+  - `timeSlots`: Array of strings in format `"HH:mm-HH:mm"` (e.g., `"09:00-17:00"`)
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="boolean">
+  Indicates if the registration was successful
+</ResponseField>
+
+<RequestExample>
+```json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "securepassword123",
+  "mobileNumber": "+1234567890",
+  "role": "user",
+  "bio": "Software developer with 5 years of experience",
+  "availability": [
+    {
+      "day": "Monday",
+      "timeSlots": ["09:00-12:00", "13:00-17:00"]
+    }
+  ]
+}
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "success": true,
+  "message": "User registered successfully",
+  "userId": "507f1f77bcf86cd799439011",
+  "role": "user"
+}
+```
+</ResponseExample>

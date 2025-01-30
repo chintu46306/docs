@@ -1,0 +1,38 @@
+---
+title: 'Get Profile'
+api: 'GET /api/user/profile'
+description: 'Retrieve the current user profile'
+authentication: 'Bearer Token'
+---
+
+### Headers
+
+<ParamField header="Authorization" type="string" required>
+  Bearer token for authentication
+</ParamField>
+
+### Response
+
+<ResponseField name="user" type="object">
+  Object containing user profile information
+</ResponseField>
+
+<ResponseExample>
+```json
+{
+  "user": {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "mobileNumber": "+1234567890",
+    "role": "user",
+    "bio": "Software developer with 5 years of experience",
+    "availability": [
+      {
+        "day": "Monday",
+        "timeSlots": ["09:00-12:00", "13:00-17:00"]
+      }
+    ]
+  }
+}
+```
+</ResponseExample>
